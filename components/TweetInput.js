@@ -14,7 +14,7 @@ export default function TweetInput({ setIsOpen, placeholder, type, tweet }) {
   const [input, setInput] = useState("");
   const [selectedFile, setSelectedFile] = useState(null);
   const textAreaRef = useRef(null);
-  useEffect(() => textAreaRef.current?.focus());
+  // useEffect(() => textAreaRef.current?.focus());
 
   const { user } = useAccount();
 
