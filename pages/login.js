@@ -37,6 +37,7 @@ export default function Login() {
     <>
       <Meta {...customMeta} />
       <PageMotion>
+        Hey
         <section className="min-h-screen max-w-7xl mx-auto px-6 sm:px-8 lg:px-10">
           <div className="  flex flex-col justify-center py-10 sm:px-6 lg:px-8">
             <div className="sm:mx-auto sm:w-full sm:max-w-md">
