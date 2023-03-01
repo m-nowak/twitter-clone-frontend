@@ -1,4 +1,4 @@
-import { React, useState } from "react";
+import { React } from "react";
 import Image from "next/image";
 import { useAccount } from "../contexts/AccountContext.js";
 import { useQuery } from "@tanstack/react-query";
@@ -81,7 +81,7 @@ export default function Login() {
                         onClick={() =>
                           handleLogin(user.username, "twitterclone1")
                         }
-                        className={` rounded-none w-full flex p-6 items-center hover:bg-gray-100 transition duration-500 ease-out`}
+                        className="focus:animate-pulse rounded-none w-full flex p-6 items-center hover:bg-gray-100 transition duration-500 ease-out"
                       >
                         <div className="flex">
                           <img
