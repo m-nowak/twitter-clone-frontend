@@ -41,7 +41,7 @@ export default function Login() {
           <div className="flex flex-col justify-center py-5 sm:px-6 lg:px-8">
             <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
               <div className="bg-white border-gray-300 shadow-lg sm:rounded-lg overflow-hidden">
-                <div className="py-4 bg-grey-50">
+                <div className="py-4 bg-grey-100 border-b-2 border-white">
                   <div className="p-2 w-full flex items-center justify-center">
                     <Image
                       width="32"
