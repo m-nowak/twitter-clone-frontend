@@ -1,7 +1,7 @@
 import { React, useState } from "react";
 import Image from "next/image";
 import { useAccount } from "../contexts/AccountContext.js";
-import { getAllUsers } from "../lib/api.js";
+import { useQuery } from "@tanstack/react-query";
 import { useRouter } from "next/router";
 import Meta from "../components/Meta";
 import Loader from "../components/Loader";
@@ -9,7 +9,16 @@ import PageMotion from "../components/PageMotion";
 import { motion as m } from "framer-motion";
 
 export default function Login() {
-  const { isAuthenticated, loginUser } = useAccount();
+  const { isAuthenticated, loginUser, publicInstance } = useAccount();
+  const { status, data, error } = useQuery({
+    queryKey: ["users"],
+    queryFn: async () => {
+      const { data } = await publicInstance.get("/accounts/users/");
+      return data;
+    },
+    initialData: [],
+    refetchOnWindowFocus: false,
+  });
   const router = useRouter();
   const customMeta = {
     title: "Login",
@@ -19,14 +28,11 @@ export default function Login() {
     router.push("/");
     return null;
   }
-  const [logging, setLogging] = useState("");
 
   function handleLogin(u, p) {
-    setLogging(u);
     loginUser(u, p);
   }
 
-  const { status, data, error } = getAllUsers();
   return (
     <>
       <Meta {...customMeta} />
@@ -75,9 +81,7 @@ export default function Login() {
                         onClick={() =>
                           handleLogin(user.username, "twitterclone1")
                         }
-                        className={`${
-                          logging === user.username ? "animate-pulse" : ""
-                        } rounded-none w-full flex p-6 items-center hover:bg-gray-100 transition duration-500 ease-out`}
+                        className={` rounded-none w-full flex p-6 items-center hover:bg-gray-100 transition duration-500 ease-out`}
                       >
                         <div className="flex">
                           <img

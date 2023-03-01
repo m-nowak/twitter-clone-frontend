@@ -1,9 +1,21 @@
 import { SearchIcon } from "@heroicons/react/outline";
 import { motion as m } from "framer-motion";
-import { getUserTweetCount } from "../lib/api";
+import { useAccount } from "../contexts/AccountContext.js";
+import { useQuery } from "@tanstack/react-query";
+import dynamic from "next/dynamic";
+const Loader = dynamic(() => import("./Loader"));
 
 export default function Widgets({ newsResults, randomUsersResults }) {
-  const { status, data, error } = getUserTweetCount();
+  const { privateInstance } = useAccount();
+  const { status, data, error } = useQuery({
+    queryKey: ["tweets-count"],
+    queryFn: async () => {
+      const { data } = await privateInstance.get("/tweets/count/");
+      return data;
+    },
+    initialData: [],
+    refetchOnWindowFocus: true,
+  });
   return (
     <div className="w-[320px] hidden lg:inline ml-8 space-y-5">
       <div className=" sticky top-0 bg-white py-1.5 z-10">
