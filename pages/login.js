@@ -38,8 +38,8 @@ export default function Login() {
       <Meta {...customMeta} />
       <PageMotion>
         <section className="min-h-screen max-w-7xl mx-auto px-6 sm:px-8 lg:px-10">
-          <div className="flex flex-col justify-center py-1 md:py-5 sm:px-6 lg:px-8">
-            <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
+          <div className="flex flex-col justify-center py-2 md:py-5 sm:px-6 lg:px-8">
+            <div className="mt-2 sm:mx-auto sm:w-full sm:max-w-md">
               <div className="bg-white border-gray-300 shadow-lg sm:rounded-lg overflow-hidden">
                 <div className="py-4 bg-gradient-to-b from-gray-100 to-transparent">
                   <div className="p-2 w-full flex items-center justify-center">
