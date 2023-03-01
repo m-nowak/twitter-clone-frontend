@@ -39,26 +39,24 @@ export default function Login() {
       <PageMotion>
         <section className="min-h-screen max-w-7xl mx-auto px-6 sm:px-8 lg:px-10">
           <div className="  flex flex-col justify-center py-10 sm:px-6 lg:px-8">
-            <div className="sm:mx-auto sm:w-full sm:max-w-md">
-              <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
+            <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
+              <div className="bg-white border-gray-300 shadow-md sm:rounded-lg overflow-hidden">
                 {" "}
-                <div className="bg-white border-gray-300 shadow-md sm:rounded-lg overflow-hidden">
-                  <div className="p-2 w-full flex items-center justify-center">
-                    <Image
-                      width="32"
-                      height="32"
-                      alt="logo"
-                      src="/twitter.svg"
-                      priority={42}
-                    ></Image>
-                  </div>
-                  <h2 className="mt-6 text-center text-2xl sm:text-3xl  font-extrabold text-gray-900">
-                    Log in to Twitter Clone
-                  </h2>
-                  <p className="mt-2 text-center text-sm text-gray-600">
-                    Select account from list below
-                  </p>
-                </div>{" "}
+                <div className="p-2 w-full flex items-center justify-center">
+                  <Image
+                    width="32"
+                    height="32"
+                    alt="logo"
+                    src="/twitter.svg"
+                    priority={42}
+                  ></Image>
+                </div>
+                <h2 className="mt-6 text-center text-2xl sm:text-3xl  font-extrabold text-gray-900">
+                  Log in to Twitter Clone
+                </h2>
+                <p className="mt-2 text-center text-sm text-gray-600">
+                  Select account from list below
+                </p>
                 {status === "loading" ? (
                   <div className="flex h-28 h justify-center items-center">
                     <Loader />
