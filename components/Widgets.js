@@ -65,16 +65,6 @@ export default function Widgets({ newsResults, randomUsersResults }) {
           </>
         )}
       </div>
-      <div className="p-1 text-right text-sm text-gray-500">
-        ---------------------------- made by{" "}
-        <a
-          target="blank"
-          href={process.env.NEXT_PUBLIC_MY_URL}
-          className="text-blue-500"
-        >
-          Michal Nowak
-        </a>
-      </div>
     </div>
   );
 }
